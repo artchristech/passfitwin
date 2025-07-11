@@ -24,7 +24,7 @@ export default function QuickActions({ onQuickAction, onStartPushupTracking, isL
   };
 
   return (
-    <div className="fixed bottom-32 left-0 right-0 p-4 bg-zinc-800/30 border-t border-zinc-700/30 sm:p-6 z-10">
+    <div className="fixed bottom-32 left-0 right-0 p-4 bg-zinc-800 border-t border-zinc-700 sm:p-6 z-10">
       <p className="text-sm text-zinc-300 mb-3 font-medium sm:mb-4">Quick Actions</p>
       
       {/* Mobile: Horizontal scroll */}

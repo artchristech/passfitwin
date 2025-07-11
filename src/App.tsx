@@ -161,14 +161,14 @@ function App() {
       </div>
       
       {/* Tab Navigation - Now at Bottom */}
-      <div className="bg-zinc-800/50 border-t border-zinc-700/50 fixed bottom-0 left-0 right-0 z-20 pb-safe-bottom">
+      <div className="bg-zinc-800 border-t border-zinc-700 fixed bottom-0 left-0 right-0 z-20 pb-safe-bottom">
         <div className="w-full max-w-md mx-auto flex px-4 sm:max-w-4xl">
           <button
             onClick={() => setActiveTab('chat')}
             className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base ${
               activeTab === 'chat'
                 ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/30'
+                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
             }`}
           >
             Chat
@@ -178,7 +178,7 @@ function App() {
             className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 flex items-center justify-center space-x-1 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base sm:space-x-2 ${
               activeTab === 'challenges'
                 ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/30'
+                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
             }`}
           >
             <Target className="w-4 h-4" />
@@ -189,7 +189,7 @@ function App() {
             className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 flex items-center justify-center space-x-1 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base sm:space-x-2 ${
               activeTab === 'achievements'
                 ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/30'
+                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
             }`}
           >
             <Award className="w-4 h-4" />
