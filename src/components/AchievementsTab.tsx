@@ -23,7 +23,7 @@ export default function AchievementsTab({
   const xpProgress = (xp / xpToNextLevel) * 100;
 
   return (
-    <div className="p-4 space-y-4 sm:space-y-6 overflow-y-auto">
+    <div className="p-4 space-y-4 sm:space-y-6">
       {/* Level Progress */}
       <div className="bg-gradient-to-r from-orange-500 to-purple-600 text-white p-6 rounded-2xl">
         <div className="flex items-center justify-between mb-4">

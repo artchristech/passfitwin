@@ -59,7 +59,7 @@ export default function CameraWorkoutCard({ onStartPushupTracking, isLoading }: 
           </div>
           
           {/* Mobile: Horizontal scroll */}
-          <div className="flex space-x-3 overflow-x-auto pb-2 sm:hidden">
+          <div className="flex space-x-3 overflow-x-auto scrollbar-hide pb-2 sm:hidden">
             {pushupChallenges.map((challenge) => (
               <button
                 key={challenge.reps}

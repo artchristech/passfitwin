@@ -28,7 +28,7 @@ export default function QuickActions({ onQuickAction, onStartPushupTracking, isL
       <p className="text-sm text-zinc-300 mb-3 font-medium sm:mb-4">Quick Actions</p>
       
       {/* Mobile: Horizontal scroll */}
-      <div className="flex space-x-3 overflow-x-auto pb-2 sm:hidden">
+      <div className="flex space-x-3 overflow-x-auto scrollbar-hide pb-2 sm:hidden">
         {actions.map((action) => (
           <button
             key={action.id}

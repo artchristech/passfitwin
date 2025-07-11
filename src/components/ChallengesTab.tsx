@@ -14,7 +14,7 @@ export default function ChallengesTab({ challenges, onAcceptChallenge, onClaimRe
   const specialChallenges = challenges.filter(c => c.type === 'special');
 
   return (
-    <div className="p-4 space-y-4 sm:space-y-6 overflow-y-auto">
+    <div className="p-4 space-y-4 sm:space-y-6">
       {/* Header */}
       <div className="text-center">
         <h2 className="text-xl font-bold text-zinc-100 mb-2 sm:text-2xl">Fitness Challenges</h2>

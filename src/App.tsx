@@ -146,7 +146,7 @@ function App() {
       <div className="flex-1 flex flex-col w-full max-w-md mx-auto bg-zinc-800/30 rounded-3xl m-2 overflow-hidden sm:max-w-4xl sm:m-4">
         {activeTab === 'chat' && (
           <>
-            <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 sm:p-6 sm:space-y-6 scroll-smooth">
+            <div ref={chatContainerRef} className="flex-1 overflow-y-auto scrollbar-hide p-4 space-y-4 sm:p-6 sm:space-y-6 scroll-smooth">
               {messages.length > 3 && (
                 <ProgressStats stats={mockStats} />
               )}
@@ -176,7 +176,7 @@ function App() {
         )}
         
         {activeTab === 'challenges' && (
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto scrollbar-hide">
             <ChallengesTab
               challenges={gamification.gameState.activeChallenges}
               onAcceptChallenge={gamification.acceptChallenge}
@@ -186,7 +186,7 @@ function App() {
         )}
         
         {activeTab === 'achievements' && (
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto scrollbar-hide">
             <AchievementsTab
               achievements={gamification.gameState.achievements}
               newAchievements={gamification.newAchievements}
