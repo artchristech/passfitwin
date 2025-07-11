@@ -85,13 +85,13 @@ function App() {
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: 'FitCoach AI - My Personal Fitness Journey',
-        text: `I'm Level ${gamification.gameState.level} with ${gamification.gameState.totalPoints} points and a ${gamification.gameState.streak}-day streak with FitCoach AI! 💪`,
+        title: 'PASSFiT - My Personal Fitness Journey',
+        text: `I'm Level ${gamification.gameState.level} with ${gamification.gameState.totalPoints} points and a ${gamification.gameState.streak}-day streak with PASSFiT! 💪`,
         url: window.location.href,
       });
     } else {
       // Fallback for browsers that don't support Web Share API
-      const shareText = `I'm Level ${gamification.gameState.level} with ${gamification.gameState.totalPoints} points and a ${gamification.gameState.streak}-day streak with FitCoach AI! 💪 Check it out: ${window.location.href}`;
+      const shareText = `I'm Level ${gamification.gameState.level} with ${gamification.gameState.totalPoints} points and a ${gamification.gameState.streak}-day streak with PASSFiT! 💪 Check it out: ${window.location.href}`;
       navigator.clipboard.writeText(shareText);
       showToast('Share text copied to clipboard!', 'success');
     }
