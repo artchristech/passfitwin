@@ -143,31 +143,19 @@ function App() {
         )}
         
         {activeTab === 'achievements' && (
-          <>
-            <div className="flex-1 overflow-y-auto scrollbar-hide pb-20">
-              <AchievementsTab
-                achievements={gamification.gameState.achievements}
-                newAchievements={gamification.newAchievements}
-                level={gamification.gameState.level}
-                xp={gamification.gameState.xp}
-                xpToNextLevel={gamification.gameState.xpToNextLevel}
-              />
-            </div>
-            
-            <QuickActions 
-              onQuickAction={handleQuickActionWithLoading} 
-              onStartPushupTracking={handlePushupTrackingWithLoading}
-              isLoading={isLoading}
-            />
-          </>
-        )}
-      </div>
+          <div className="flex-1 overflow-y-auto scrollbar-hide pb-20">
             <AchievementsTab
               achievements={gamification.gameState.achievements}
               newAchievements={gamification.newAchievements}
               level={gamification.gameState.level}
               xp={gamification.gameState.xp}
               xpToNextLevel={gamification.gameState.xpToNextLevel}
+            />
+            
+            <QuickActions 
+              onQuickAction={handleQuickActionWithLoading} 
+              onStartPushupTracking={handlePushupTrackingWithLoading}
+              isLoading={isLoading}
             />
           </div>
         )}
