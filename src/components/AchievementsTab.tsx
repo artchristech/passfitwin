@@ -8,6 +8,9 @@ interface AchievementsTabProps {
   level: number;
   xp: number;
   xpToNextLevel: number;
+  onQuickAction?: (action: string) => void;
+  onStartPushupTracking?: (targetReps: number) => void;
+  isLoading?: string | null;
 }
 
 export default function AchievementsTab({ 
@@ -15,7 +18,10 @@ export default function AchievementsTab({
   newAchievements, 
   level, 
   xp, 
-  xpToNextLevel 
+  xpToNextLevel,
+  onQuickAction = () => {},
+  onStartPushupTracking = () => {},
+  isLoading = null
 }: AchievementsTabProps) {
   const unlockedAchievements = achievements.filter(a => a.unlockedAt);
   const lockedAchievements = achievements.filter(a => !a.unlockedAt);
@@ -129,6 +135,123 @@ export default function AchievementsTab({
               )}
             </div>
           ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Quick Actions - Integrated */}
+    <div className="p-4 space-y-4 sm:space-y-6 border-t border-zinc-700/30 mt-6">
+      <div>
+        <h3 className="text-lg font-semibold text-zinc-100 mb-4">Quick Actions</h3>
+        
+        {/* Mobile: Horizontal scroll */}
+        <div className="flex space-x-3 overflow-x-auto scrollbar-hide pb-2 sm:hidden">
+          <button
+            onClick={() => onQuickAction('quick-workout')}
+            disabled={isLoading === 'quick-workout'}
+            className="flex-shrink-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px]"
+          >
+            {isLoading === 'quick-workout' ? (
+              <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <div className="w-4 h-4 mx-auto mb-1">⏱️</div>
+            )}
+            <span className="text-xs font-medium block">5-Min Workout</span>
+          </button>
+          
+          <button
+            onClick={() => onQuickAction('daily-challenge')}
+            disabled={isLoading === 'daily-challenge'}
+            className="flex-shrink-0 bg-gradient-to-r from-orange-500 to-red-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px]"
+          >
+            {isLoading === 'daily-challenge' ? (
+              <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <div className="w-4 h-4 mx-auto mb-1">🎯</div>
+            )}
+            <span className="text-xs font-medium block">Daily Challenge</span>
+          </button>
+          
+          <button
+            onClick={() => onQuickAction('strength-training')}
+            disabled={isLoading === 'strength-training'}
+            className="flex-shrink-0 bg-gradient-to-r from-purple-500 to-pink-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px]"
+          >
+            {isLoading === 'strength-training' ? (
+              <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <div className="w-4 h-4 mx-auto mb-1">⚡</div>
+            )}
+            <span className="text-xs font-medium block">Strength Training</span>
+          </button>
+          
+          <button
+            onClick={() => onStartPushupTracking(20)}
+            disabled={isLoading === 'camera-pushups'}
+            className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px]"
+          >
+            {isLoading === 'camera-pushups' ? (
+              <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <div className="w-4 h-4 mx-auto mb-1">📷</div>
+            )}
+            <span className="text-xs font-medium block">AI Pushup Tracker</span>
+          </button>
+        </div>
+        
+        {/* Desktop: Grid */}
+        <div className="hidden sm:grid sm:grid-cols-2 sm:gap-3">
+          <button
+            onClick={() => onQuickAction('quick-workout')}
+            disabled={isLoading === 'quick-workout'}
+            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
+          >
+            {isLoading === 'quick-workout' ? (
+              <div className="w-5 h-5 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <div className="w-5 h-5 mx-auto mb-1">⏱️</div>
+            )}
+            <span className="text-xs font-medium block">5-Min Workout</span>
+          </button>
+          
+          <button
+            onClick={() => onQuickAction('daily-challenge')}
+            disabled={isLoading === 'daily-challenge'}
+            className="bg-gradient-to-r from-orange-500 to-red-600 text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
+          >
+            {isLoading === 'daily-challenge' ? (
+              <div className="w-5 h-5 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <div className="w-5 h-5 mx-auto mb-1">🎯</div>
+            )}
+            <span className="text-xs font-medium block">Daily Challenge</span>
+          </button>
+          
+          <button
+            onClick={() => onQuickAction('strength-training')}
+            disabled={isLoading === 'strength-training'}
+            className="bg-gradient-to-r from-purple-500 to-pink-600 text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
+          >
+            {isLoading === 'strength-training' ? (
+              <div className="w-5 h-5 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <div className="w-5 h-5 mx-auto mb-1">⚡</div>
+            )}
+            <span className="text-xs font-medium block">Strength Training</span>
+          </button>
+          
+          <button
+            onClick={() => onStartPushupTracking(20)}
+            disabled={isLoading === 'camera-pushups'}
+            className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
+          >
+            {isLoading === 'camera-pushups' ? (
+              <div className="w-5 h-5 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <div className="w-5 h-5 mx-auto mb-1">📷</div>
+            )}
+            <span className="text-xs font-medium block">AI Pushup Tracker</span>
+          </button>
         </div>
       </div>
     </div>

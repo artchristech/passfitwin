@@ -150,10 +150,7 @@ function App() {
               level={gamification.gameState.level}
               xp={gamification.gameState.xp}
               xpToNextLevel={gamification.gameState.xpToNextLevel}
-            />
-            
-            <QuickActions 
-              onQuickAction={handleQuickActionWithLoading} 
+              onQuickAction={handleQuickActionWithLoading}
               onStartPushupTracking={handlePushupTrackingWithLoading}
               isLoading={isLoading}
             />
