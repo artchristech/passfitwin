@@ -29,7 +29,8 @@ export default function AchievementsTab({
   const xpProgress = (xp / xpToNextLevel) * 100;
 
   return (
-    <div className="p-4 space-y-4 sm:space-y-6">
+    <>
+      <div className="p-4 space-y-4 sm:space-y-6">
       {/* Level Progress */}
       <div className="bg-gradient-to-r from-orange-500 to-purple-600 text-white p-6 rounded-2xl">
         <div className="flex items-center justify-between mb-4">
@@ -137,12 +138,12 @@ export default function AchievementsTab({
           ))}
         </div>
       </div>
-    </div>
+      </div>
 
-    {/* Quick Actions - Integrated */}
-    <div className="p-4 space-y-4 sm:space-y-6 border-t border-zinc-700/30 mt-6">
-      <div>
-        <h3 className="text-lg font-semibold text-zinc-100 mb-4">Quick Actions</h3>
+      {/* Quick Actions - Integrated */}
+      <div className="p-4 space-y-4 sm:space-y-6 border-t border-zinc-700/30 mt-6">
+        <div>
+          <h3 className="text-lg font-semibold text-zinc-100 mb-4">Quick Actions</h3>
         
         {/* Mobile: Horizontal scroll */}
         <div className="flex space-x-3 overflow-x-auto scrollbar-hide pb-2 sm:hidden">
@@ -252,8 +253,9 @@ export default function AchievementsTab({
             )}
             <span className="text-xs font-medium block">AI Pushup Tracker</span>
           </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
