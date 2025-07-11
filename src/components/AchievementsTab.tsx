@@ -136,7 +136,7 @@ export default function AchievementsTab({
             ) : (
               <div className="w-6 h-6 mx-auto mb-2 text-xl">📷</div>
             )}
-            <span className="text-sm font-medium block">AI Pushup Tracker</span>
+            <span className="text-sm font-medium block">Vision</span>
           </button>
         </div>
         
@@ -191,7 +191,7 @@ export default function AchievementsTab({
             ) : (
               <div className="w-7 h-7 mx-auto mb-2 text-2xl">📷</div>
             )}
-            <span className="text-sm font-medium block">AI Pushup Tracker</span>
+            <span className="text-sm font-medium block">Vision</span>
           </button>
           </div>
         </div>
