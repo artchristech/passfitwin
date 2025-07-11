@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Trophy, Award, Target, AlertCircle } from 'lucide-react';
+import { Trophy, Award, Target, AlertCircle, Zap } from 'lucide-react';
 import Header from './components/Header';
 import ChatMessage from './components/ChatMessage';
 import ChatInput from './components/ChatInput';
@@ -194,7 +194,7 @@ function App() {
                 : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
             }`}
           >
-            Agent
+            <Zap className="w-4 h-4" />
           </button>
         </div>
       </div>
