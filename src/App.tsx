@@ -207,6 +207,30 @@ function App() {
                 activeTab === 'challenges' ? 'opacity-30' : 'opacity-0 hover:opacity-20'
               }`} />
             </button>
+
+            {/* Chat Tab */}
+            <button
+              onClick={() => setActiveTab('chat')}
+              className="flex-1 h-full relative flex items-center justify-center transition-colors duration-150"
+            >
+              {/* Active Indicator */}
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-orange-400 transition-opacity duration-150 ${
+                activeTab === 'chat' ? 'opacity-100' : 'opacity-0'
+              }`} />
+              
+              {/* Icon */}
+              <Info className={`w-5 h-5 transition-colors duration-150 ${
+                activeTab === 'chat' ? 'text-orange-400' : 'text-zinc-400'
+              }`} />
+              
+              {/* Background Overlay */}
+              <div className={`absolute inset-0 bg-zinc-700 transition-opacity duration-150 ${
+                activeTab === 'chat' ? 'opacity-30' : 'opacity-0 hover:opacity-20'
+              }`} />
+            </button>
+          </div>
+        </div>
+      </nav>
       
       {/* Workout Session Modal */}
       {activeWorkout && (
@@ -234,27 +258,4 @@ function App() {
   );
 }
 
-            {/* Chat Tab */}
-            <button
-              onClick={() => setActiveTab('chat')}
-              className="flex-1 h-full relative flex items-center justify-center transition-colors duration-150"
-            >
-              {/* Active Indicator */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-orange-400 transition-opacity duration-150 ${
-                activeTab === 'chat' ? 'opacity-100' : 'opacity-0'
-              }`} />
-              
-              {/* Icon */}
-              <Info className={`w-5 h-5 transition-colors duration-150 ${
-                activeTab === 'chat' ? 'text-orange-400' : 'text-zinc-400'
-              }`} />
-              
-              {/* Background Overlay */}
-              <div className={`absolute inset-0 bg-zinc-700 transition-opacity duration-150 ${
-                activeTab === 'chat' ? 'opacity-30' : 'opacity-0 hover:opacity-20'
-              }`} />
-            </button>
-          </div>
-        </div>
-      </nav>
 export default App;
