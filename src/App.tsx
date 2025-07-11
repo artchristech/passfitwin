@@ -162,49 +162,51 @@ function App() {
       </div>
       
       {/* Tab Navigation - Now at Bottom */}
-      <div className="bg-zinc-800 border-t border-zinc-700 fixed bottom-0 left-0 right-0 z-20 pb-safe-bottom">
-        <div className="w-full max-w-md mx-auto flex sm:max-w-4xl h-16">
-          <button
-            onClick={() => setActiveTab('achievements')}
-            className={`flex-1 relative transition-colors duration-200 flex items-center justify-center min-h-[64px] ${
-              activeTab === 'achievements'
-                ? 'text-orange-400 bg-zinc-700/50'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700/30'
-            }`}
-          >
-            {activeTab === 'achievements' && (
-              <div className="absolute top-0 left-0 right-0 h-1 bg-orange-400 rounded-b-sm"></div>
-            )}
-            <Award className="w-4 h-4" />
-          </button>
-          <button
-            onClick={() => setActiveTab('challenges')}
-            className={`flex-1 relative transition-colors duration-200 flex items-center justify-center min-h-[64px] ${
-              activeTab === 'challenges'
-                ? 'text-orange-400 bg-zinc-700/50'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700/30'
-            }`}
-          >
-            {activeTab === 'challenges' && (
-              <div className="absolute top-0 left-0 right-0 h-1 bg-orange-400 rounded-b-sm"></div>
-            )}
-            <Target className="w-4 h-4" />
-          </button>
-          <button
-            onClick={() => setActiveTab('chat')}
-            className={`flex-1 relative transition-colors duration-200 flex items-center justify-center min-h-[64px] ${
-              activeTab === 'chat'
-                ? 'text-orange-400 bg-zinc-700/50'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700/30'
-            }`}
-          >
-            {activeTab === 'chat' && (
-              <div className="absolute top-0 left-0 right-0 h-1 bg-orange-400 rounded-b-sm"></div>
-            )}
-            <Info className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
+      {/* Bottom Navigation - Rebuilt for Stability */}
+      <nav className="fixed bottom-0 left-0 right-0 z-20 bg-zinc-800 border-t border-zinc-700 pb-safe-bottom">
+        <div className="w-full max-w-md mx-auto sm:max-w-4xl">
+          <div className="flex h-16">
+            {/* Achievements Tab */}
+            <button
+              onClick={() => setActiveTab('achievements')}
+              className="flex-1 h-full relative flex items-center justify-center transition-colors duration-150"
+            >
+              {/* Active Indicator */}
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-orange-400 transition-opacity duration-150 ${
+                activeTab === 'achievements' ? 'opacity-100' : 'opacity-0'
+              }`} />
+              
+              {/* Icon */}
+              <Award className={`w-5 h-5 transition-colors duration-150 ${
+                activeTab === 'achievements' ? 'text-orange-400' : 'text-zinc-400'
+              }`} />
+              
+              {/* Background Overlay */}
+              <div className={`absolute inset-0 bg-zinc-700 transition-opacity duration-150 ${
+                activeTab === 'achievements' ? 'opacity-30' : 'opacity-0 hover:opacity-20'
+              }`} />
+            </button>
+
+            {/* Challenges Tab */}
+            <button
+              onClick={() => setActiveTab('challenges')}
+              className="flex-1 h-full relative flex items-center justify-center transition-colors duration-150"
+            >
+              {/* Active Indicator */}
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-orange-400 transition-opacity duration-150 ${
+                activeTab === 'challenges' ? 'opacity-100' : 'opacity-0'
+              }`} />
+              
+              {/* Icon */}
+              <Target className={`w-5 h-5 transition-colors duration-150 ${
+                activeTab === 'challenges' ? 'text-orange-400' : 'text-zinc-400'
+              }`} />
+              
+              {/* Background Overlay */}
+              <div className={`absolute inset-0 bg-zinc-700 transition-opacity duration-150 ${
+                activeTab === 'challenges' ? 'opacity-30' : 'opacity-0 hover:opacity-20'
+              }`} />
+            </button>
       
       {/* Workout Session Modal */}
       {activeWorkout && (
@@ -232,4 +234,27 @@ function App() {
   );
 }
 
+            {/* Chat Tab */}
+            <button
+              onClick={() => setActiveTab('chat')}
+              className="flex-1 h-full relative flex items-center justify-center transition-colors duration-150"
+            >
+              {/* Active Indicator */}
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-orange-400 transition-opacity duration-150 ${
+                activeTab === 'chat' ? 'opacity-100' : 'opacity-0'
+              }`} />
+              
+              {/* Icon */}
+              <Info className={`w-5 h-5 transition-colors duration-150 ${
+                activeTab === 'chat' ? 'text-orange-400' : 'text-zinc-400'
+              }`} />
+              
+              {/* Background Overlay */}
+              <div className={`absolute inset-0 bg-zinc-700 transition-opacity duration-150 ${
+                activeTab === 'chat' ? 'opacity-30' : 'opacity-0 hover:opacity-20'
+              }`} />
+            </button>
+          </div>
+        </div>
+      </nav>
 export default App;
