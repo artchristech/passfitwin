@@ -1,11 +1,12 @@
 import React from 'react';
-import { Camera, Target, Zap, Timer } from 'lucide-react';
+import { Camera, Target, Zap, Timer, Loader2 } from 'lucide-react';
 
 interface CameraWorkoutCardProps {
   onStartPushupTracking: (targetReps: number) => void;
+  isLoading?: boolean;
 }
 
-export default function CameraWorkoutCard({ onStartPushupTracking }: CameraWorkoutCardProps) {
+export default function CameraWorkoutCard({ onStartPushupTracking, isLoading }: CameraWorkoutCardProps) {
   const pushupChallenges = [
     { reps: 10, difficulty: 'Beginner', color: 'from-green-500 to-emerald-600' },
     { reps: 20, difficulty: 'Intermediate', color: 'from-yellow-500 to-orange-600' },
@@ -14,19 +15,19 @@ export default function CameraWorkoutCard({ onStartPushupTracking }: CameraWorko
   ];
 
   return (
-    <div className="bg-zinc-800/40 rounded-3xl p-6 border border-zinc-700/30">
+    <div className="bg-zinc-800/40 rounded-3xl p-4 border border-zinc-700/30 sm:p-6 animate-fade-in">
       <div className="flex items-center space-x-3 mb-4">
-        <div className="bg-gradient-to-r from-blue-500/80 to-purple-600/80 p-3 rounded-full text-white">
-          <Camera className="w-6 h-6" />
+        <div className="bg-gradient-to-r from-blue-500/80 to-purple-600/80 p-2 rounded-full text-white sm:p-3">
+          <Camera className="w-5 h-5 sm:w-6 sm:h-6" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-zinc-100">AI Camera Tracking</h3>
-          <p className="text-zinc-300">Real-time pushup counting & form analysis</p>
+          <h3 className="text-lg font-bold text-zinc-100 sm:text-xl">AI Camera Tracking</h3>
+          <p className="text-sm text-zinc-300 sm:text-base">Real-time pushup counting & form analysis</p>
         </div>
       </div>
 
       <div className="space-y-4">
-        <div className="bg-zinc-700/30 rounded-2xl p-4 border border-zinc-600/20">
+        <div className="bg-zinc-700/30 rounded-2xl p-3 border border-zinc-600/20 sm:p-4">
           <div className="flex items-center space-x-2 mb-3">
             <Zap className="w-5 h-5 text-orange-400" />
             <span className="font-semibold text-zinc-100">Features</span>
@@ -56,21 +57,51 @@ export default function CameraWorkoutCard({ onStartPushupTracking }: CameraWorko
             <Target className="w-5 h-5 text-purple-400" />
             <span className="font-semibold text-zinc-100">Choose Your Challenge</span>
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          
+          {/* Mobile: Horizontal scroll */}
+          <div className="flex space-x-3 overflow-x-auto pb-2 sm:hidden">
             {pushupChallenges.map((challenge) => (
               <button
                 key={challenge.reps}
                 onClick={() => onStartPushupTracking(challenge.reps)}
-                className={`bg-gradient-to-r ${challenge.color} text-white p-4 rounded-2xl hover:scale-105 transition-all duration-300 shadow-lg`}
+                disabled={isLoading}
+                className={`flex-shrink-0 bg-gradient-to-r ${challenge.color} text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[80px]`}
               >
-                <div className="text-2xl font-bold mb-1">{challenge.reps}</div>
-                <div className="text-xs opacity-90">{challenge.difficulty}</div>
+                {isLoading ? (
+                  <Loader2 className="w-5 h-5 mx-auto animate-spin" />
+                ) : (
+                  <>
+                    <div className="text-xl font-bold mb-1">{challenge.reps}</div>
+                    <div className="text-xs opacity-90">{challenge.difficulty}</div>
+                  </>
+                )}
+              </button>
+            ))}
+          </div>
+          
+          {/* Desktop: Grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 sm:gap-3">
+            {pushupChallenges.map((challenge) => (
+              <button
+                key={challenge.reps}
+                onClick={() => onStartPushupTracking(challenge.reps)}
+                disabled={isLoading}
+                className={`bg-gradient-to-r ${challenge.color} text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100`}
+              >
+                {isLoading ? (
+                  <Loader2 className="w-6 h-6 mx-auto animate-spin" />
+                ) : (
+                  <>
+                    <div className="text-2xl font-bold mb-1">{challenge.reps}</div>
+                    <div className="text-xs opacity-90">{challenge.difficulty}</div>
+                  </>
+                )}
               </button>
             ))}
           </div>
         </div>
 
-        <div className="bg-yellow-500/10 border border-yellow-400/20 rounded-2xl p-4">
+        <div className="bg-yellow-500/10 border border-yellow-400/20 rounded-2xl p-3 sm:p-4">
           <div className="flex items-center space-x-2 mb-2">
             <Timer className="w-4 h-4 text-yellow-400" />
             <span className="text-sm font-semibold text-yellow-300">Setup Tips</span>
