@@ -194,7 +194,7 @@ function App() {
                 : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
             }`}
           >
-            Chat
+            Agent
           </button>
         </div>
       </div>
