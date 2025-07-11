@@ -86,11 +86,11 @@ export default function AchievementsTab({
           <h3 className="text-lg font-semibold text-zinc-100 mb-4">Quick Actions</h3>
         
         {/* Mobile: Horizontal scroll */}
-        <div className="flex space-x-3 overflow-x-auto scrollbar-hide pb-2 sm:hidden">
+        <div className="flex flex-wrap gap-3 pb-2 sm:hidden">
           <button
             onClick={() => onQuickAction('quick-workout')}
             disabled={isLoading === 'quick-workout'}
-            className="flex-shrink-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px]"
+            className="flex-shrink-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1 max-w-[140px]"
           >
             {isLoading === 'quick-workout' ? (
               <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -103,7 +103,7 @@ export default function AchievementsTab({
           <button
             onClick={() => onQuickAction('daily-challenge')}
             disabled={isLoading === 'daily-challenge'}
-            className="flex-shrink-0 bg-gradient-to-r from-orange-500 to-red-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px]"
+            className="flex-shrink-0 bg-gradient-to-r from-orange-500 to-red-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1 max-w-[140px]"
           >
             {isLoading === 'daily-challenge' ? (
               <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -116,7 +116,7 @@ export default function AchievementsTab({
           <button
             onClick={() => onQuickAction('strength-training')}
             disabled={isLoading === 'strength-training'}
-            className="flex-shrink-0 bg-gradient-to-r from-purple-500 to-pink-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px]"
+            className="flex-shrink-0 bg-gradient-to-r from-purple-500 to-pink-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1 max-w-[140px]"
           >
             {isLoading === 'strength-training' ? (
               <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -129,7 +129,7 @@ export default function AchievementsTab({
           <button
             onClick={() => onStartPushupTracking(20)}
             disabled={isLoading === 'camera-pushups'}
-            className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px]"
+            className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1 max-w-[140px]"
           >
             {isLoading === 'camera-pushups' ? (
               <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -141,7 +141,7 @@ export default function AchievementsTab({
         </div>
         
         {/* Desktop: Grid */}
-        <div className="hidden sm:grid sm:grid-cols-2 sm:gap-3">
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-3">
           <button
             onClick={() => onQuickAction('quick-workout')}
             disabled={isLoading === 'quick-workout'}
