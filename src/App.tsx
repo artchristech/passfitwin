@@ -176,16 +176,6 @@ function App() {
             <span className="hidden xs:inline">Achievements</span>
           </button>
           <button
-            onClick={() => setActiveTab('chat')}
-            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base ${
-              activeTab === 'chat'
-                ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
-            }`}
-          >
-            Chat
-          </button>
-          <button
             onClick={() => setActiveTab('challenges')}
             className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 flex items-center justify-center space-x-1 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base sm:space-x-2 ${
               activeTab === 'challenges'
@@ -195,6 +185,16 @@ function App() {
           >
             <Target className="w-4 h-4" />
             <span className="hidden xs:inline">Challenges</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('chat')}
+            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base ${
+              activeTab === 'chat'
+                ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
+                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
+            }`}
+          >
+            Chat
           </button>
         </div>
       </div>
