@@ -98,7 +98,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-900 flex flex-col pt-safe-top pb-safe-bottom">
+    <div className="min-h-screen bg-zinc-900 flex flex-col pt-safe-top pb-safe-bottom overflow-hidden">
       <Header 
         streak={gamification.gameState.streak} 
         totalWorkouts={gamification.gameState.achievements.filter(a => a.unlockedAt).length} 
@@ -108,7 +108,7 @@ function App() {
       <div className="flex-1 flex flex-col w-full max-w-md mx-auto bg-zinc-800/30 rounded-3xl m-2 overflow-hidden sm:max-w-4xl sm:m-4 pb-32">
         {activeTab === 'chat' && (
           <>
-            <div ref={chatContainerRef} className="flex-1 overflow-y-auto scrollbar-hide p-4 space-y-4 sm:p-6 sm:space-y-6 scroll-smooth pb-20">
+            <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 sm:p-6 sm:space-y-6 scroll-smooth pb-20">
               {messages.length > 3 && (
                 <ProgressStats stats={mockStats} />
               )}
@@ -133,7 +133,7 @@ function App() {
         )}
         
         {activeTab === 'challenges' && (
-          <div className="flex-1 overflow-y-auto scrollbar-hide pb-20">
+          <div className="flex-1 overflow-y-auto pb-20">
             <ChallengesTab
               challenges={gamification.gameState.activeChallenges}
               onAcceptChallenge={gamification.acceptChallenge}
@@ -143,7 +143,7 @@ function App() {
         )}
         
         {activeTab === 'achievements' && (
-          <div className="flex-1 overflow-y-auto scrollbar-hide pb-20">
+          <div className="flex-1 overflow-y-auto pb-20">
             <AchievementsTab
               achievements={gamification.gameState.achievements}
               newAchievements={gamification.newAchievements}
