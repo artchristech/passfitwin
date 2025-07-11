@@ -121,9 +121,9 @@ export default function AchievementsTab({
             {isLoading === 'strength-training' ? (
               <div className="w-5 h-5 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-6 h-6 mx-auto mb-2 text-xl">⚡</div>
+              <div className="w-6 h-6 mx-auto mb-2 text-xl">📱</div>
             )}
-            <span className="text-sm font-medium block">Strength Training</span>
+            <span className="text-sm font-medium block">Food Scanner</span>
           </button>
           
           <button
@@ -176,9 +176,9 @@ export default function AchievementsTab({
             {isLoading === 'strength-training' ? (
               <div className="w-6 h-6 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-7 h-7 mx-auto mb-2 text-2xl">⚡</div>
+              <div className="w-7 h-7 mx-auto mb-2 text-2xl">📱</div>
             )}
-            <span className="text-sm font-medium block">Strength Training</span>
+            <span className="text-sm font-medium block">Food Scanner</span>
           </button>
           
           <button
