@@ -105,48 +105,10 @@ function App() {
         onShare={handleShare}
       />
       
-      {/* Tab Navigation */}
-      <div className="bg-zinc-800/50 border-b border-zinc-700/50 sticky top-0 z-10">
-        <div className="w-full max-w-md mx-auto flex px-4 sm:max-w-4xl">
-          <button
-            onClick={() => setActiveTab('chat')}
-            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 rounded-t-2xl text-sm sm:py-4 sm:px-6 sm:text-base ${
-              activeTab === 'chat'
-                ? 'text-orange-400 bg-zinc-800 border-b-2 border-orange-400'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/30'
-            }`}
-          >
-            Chat
-          </button>
-          <button
-            onClick={() => setActiveTab('challenges')}
-            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 flex items-center justify-center space-x-1 rounded-t-2xl text-sm sm:py-4 sm:px-6 sm:text-base sm:space-x-2 ${
-              activeTab === 'challenges'
-                ? 'text-orange-400 bg-zinc-800 border-b-2 border-orange-400'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/30'
-            }`}
-          >
-            <Target className="w-4 h-4" />
-            <span className="hidden xs:inline">Challenges</span>
-          </button>
-          <button
-            onClick={() => setActiveTab('achievements')}
-            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 flex items-center justify-center space-x-1 rounded-t-2xl text-sm sm:py-4 sm:px-6 sm:text-base sm:space-x-2 ${
-              activeTab === 'achievements'
-                ? 'text-orange-400 bg-zinc-800 border-b-2 border-orange-400'
-                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/30'
-            }`}
-          >
-            <Award className="w-4 h-4" />
-            <span className="hidden xs:inline">Achievements</span>
-          </button>
-        </div>
-      </div>
-      
-      <div className="flex-1 flex flex-col w-full max-w-md mx-auto bg-zinc-800/30 rounded-3xl m-2 overflow-hidden sm:max-w-4xl sm:m-4">
+      <div className="flex-1 flex flex-col w-full max-w-md mx-auto bg-zinc-800/30 rounded-3xl m-2 overflow-hidden sm:max-w-4xl sm:m-4 pb-32">
         {activeTab === 'chat' && (
           <>
-            <div ref={chatContainerRef} className="flex-1 overflow-y-auto scrollbar-hide p-4 space-y-4 sm:p-6 sm:space-y-6 scroll-smooth">
+            <div ref={chatContainerRef} className="flex-1 overflow-y-auto scrollbar-hide p-4 space-y-4 sm:p-6 sm:space-y-6 scroll-smooth pb-20">
               {messages.length > 3 && (
                 <ProgressStats stats={mockStats} />
               )}
@@ -176,7 +138,7 @@ function App() {
         )}
         
         {activeTab === 'challenges' && (
-          <div className="flex-1 overflow-y-auto scrollbar-hide">
+          <div className="flex-1 overflow-y-auto scrollbar-hide pb-20">
             <ChallengesTab
               challenges={gamification.gameState.activeChallenges}
               onAcceptChallenge={gamification.acceptChallenge}
@@ -186,7 +148,7 @@ function App() {
         )}
         
         {activeTab === 'achievements' && (
-          <div className="flex-1 overflow-y-auto scrollbar-hide">
+          <div className="flex-1 overflow-y-auto scrollbar-hide pb-20">
             <AchievementsTab
               achievements={gamification.gameState.achievements}
               newAchievements={gamification.newAchievements}
@@ -196,6 +158,44 @@ function App() {
             />
           </div>
         )}
+      </div>
+      
+      {/* Tab Navigation - Now at Bottom */}
+      <div className="bg-zinc-800/50 border-t border-zinc-700/50 fixed bottom-0 left-0 right-0 z-20 pb-safe-bottom">
+        <div className="w-full max-w-md mx-auto flex px-4 sm:max-w-4xl">
+          <button
+            onClick={() => setActiveTab('chat')}
+            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base ${
+              activeTab === 'chat'
+                ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
+                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/30'
+            }`}
+          >
+            Chat
+          </button>
+          <button
+            onClick={() => setActiveTab('challenges')}
+            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 flex items-center justify-center space-x-1 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base sm:space-x-2 ${
+              activeTab === 'challenges'
+                ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
+                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/30'
+            }`}
+          >
+            <Target className="w-4 h-4" />
+            <span className="hidden xs:inline">Challenges</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('achievements')}
+            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 flex items-center justify-center space-x-1 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base sm:space-x-2 ${
+              activeTab === 'achievements'
+                ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
+                : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/30'
+            }`}
+          >
+            <Award className="w-4 h-4" />
+            <span className="hidden xs:inline">Achievements</span>
+          </button>
+        </div>
       </div>
       
       {/* Workout Session Modal */}

@@ -18,7 +18,7 @@ export default function ChatInput({ onSendMessage, isTyping }: ChatInputProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 bg-zinc-800/30 border-t border-zinc-700/30 sm:p-6">
+    <form onSubmit={handleSubmit} className="fixed bottom-16 left-0 right-0 p-4 bg-zinc-800/30 border-t border-zinc-700/30 sm:p-6 z-10">
       <div className="flex items-center space-x-2 sm:space-x-3">
         <button
           type="button"
