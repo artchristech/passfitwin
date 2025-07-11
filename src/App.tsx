@@ -162,38 +162,45 @@ function App() {
       </div>
       
       {/* Tab Navigation - Now at Bottom */}
-      <div className="bg-zinc-800 border-t border-zinc-700 fixed bottom-0 left-0 right-0 z-20 pb-safe-bottom">
-        <div className="w-full max-w-md mx-auto flex px-4 sm:max-w-4xl">
+      <div className="bg-zinc-800 border-t border-zinc-700 fixed bottom-0 left-0 right-0 z-20 pb-safe-bottom h-16">
+        <div className="w-full max-w-md mx-auto flex h-full sm:max-w-4xl">
           <button
             onClick={() => setActiveTab('achievements')}
-            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 flex items-center justify-center space-x-1 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base sm:space-x-2 ${
+            className={`flex-1 h-full relative text-center font-medium transition-all duration-300 flex items-center justify-center text-sm sm:text-base ${
               activeTab === 'achievements'
-                ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
+                ? 'text-orange-400'
                 : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
             }`}
           >
+            {activeTab === 'achievements' && (
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-orange-400"></div>
+            )}
             <Award className="w-4 h-4" />
-            <span className="hidden xs:inline">Achievements</span>
           </button>
           <button
             onClick={() => setActiveTab('challenges')}
-            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 flex items-center justify-center space-x-1 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base sm:space-x-2 ${
+            className={`flex-1 h-full relative text-center font-medium transition-all duration-300 flex items-center justify-center text-sm sm:text-base ${
               activeTab === 'challenges'
-                ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
+                ? 'text-orange-400'
                 : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
             }`}
           >
+            {activeTab === 'challenges' && (
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-orange-400"></div>
+            )}
             <Target className="w-4 h-4" />
-            <span className="hidden xs:inline">Challenges</span>
           </button>
           <button
             onClick={() => setActiveTab('chat')}
-            className={`flex-1 py-3 px-3 text-center font-medium transition-all duration-300 rounded-b-2xl text-sm sm:py-4 sm:px-6 sm:text-base flex items-center justify-center ${
+            className={`flex-1 h-full relative text-center font-medium transition-all duration-300 flex items-center justify-center text-sm sm:text-base ${
               activeTab === 'chat'
-                ? 'text-orange-400 bg-zinc-800 border-t-2 border-orange-400'
+                ? 'text-orange-400'
                 : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700'
             }`}
           >
+            {activeTab === 'chat' && (
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-orange-400"></div>
+            )}
             <Info className="w-4 h-4" />
           </button>
         </div>
