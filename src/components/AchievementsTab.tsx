@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Star, Trophy } from 'lucide-react';
+import { Award, Star, Trophy, Compass } from 'lucide-react';
 import AchievementBadge, { Achievement } from './AchievementBadge';
 
 interface AchievementsTabProps {
@@ -134,7 +134,7 @@ export default function AchievementsTab({
             {isLoading === 'camera-pushups' ? (
               <div className="w-5 h-5 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-6 h-6 mx-auto mb-2 text-xl">📷</div>
+              <Compass className="w-6 h-6 mx-auto mb-2" />
             )}
             <span className="text-sm font-medium block">Vision</span>
           </button>
@@ -189,7 +189,7 @@ export default function AchievementsTab({
             {isLoading === 'camera-pushups' ? (
               <div className="w-6 h-6 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-7 h-7 mx-auto mb-2 text-2xl">📷</div>
+              <Compass className="w-7 h-7 mx-auto mb-2" />
             )}
             <span className="text-sm font-medium block">Vision</span>
           </button>
