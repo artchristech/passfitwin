@@ -90,53 +90,53 @@ export default function AchievementsTab({
           <button
             onClick={() => onQuickAction('quick-workout')}
             disabled={isLoading === 'quick-workout'}
-            className="flex-shrink-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1 max-w-[140px]"
+            className="flex-shrink-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-5 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1"
           >
             {isLoading === 'quick-workout' ? (
-              <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-5 h-5 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-4 h-4 mx-auto mb-1">⏱️</div>
+              <div className="w-6 h-6 mx-auto mb-2 text-xl">⏱️</div>
             )}
-            <span className="text-xs font-medium block">5-Min Workout</span>
+            <span className="text-sm font-medium block">5-Min Workout</span>
           </button>
           
           <button
             onClick={() => onQuickAction('daily-challenge')}
             disabled={isLoading === 'daily-challenge'}
-            className="flex-shrink-0 bg-gradient-to-r from-orange-500 to-red-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1 max-w-[140px]"
+            className="flex-shrink-0 bg-gradient-to-r from-orange-500 to-red-600 text-white p-5 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1"
           >
             {isLoading === 'daily-challenge' ? (
-              <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-5 h-5 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-4 h-4 mx-auto mb-1">🎯</div>
+              <div className="w-6 h-6 mx-auto mb-2 text-xl">🎯</div>
             )}
-            <span className="text-xs font-medium block">Daily Challenge</span>
+            <span className="text-sm font-medium block">Daily Challenge</span>
           </button>
           
           <button
             onClick={() => onQuickAction('strength-training')}
             disabled={isLoading === 'strength-training'}
-            className="flex-shrink-0 bg-gradient-to-r from-purple-500 to-pink-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1 max-w-[140px]"
+            className="flex-shrink-0 bg-gradient-to-r from-purple-500 to-pink-600 text-white p-5 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1"
           >
             {isLoading === 'strength-training' ? (
-              <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-5 h-5 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-4 h-4 mx-auto mb-1">⚡</div>
+              <div className="w-6 h-6 mx-auto mb-2 text-xl">⚡</div>
             )}
-            <span className="text-xs font-medium block">Strength Training</span>
+            <span className="text-sm font-medium block">Strength Training</span>
           </button>
           
           <button
             onClick={() => onStartPushupTracking(20)}
             disabled={isLoading === 'camera-pushups'}
-            className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-3 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1 max-w-[140px]"
+            className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-5 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 min-w-[120px] flex-1"
           >
             {isLoading === 'camera-pushups' ? (
-              <div className="w-4 h-4 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-5 h-5 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-4 h-4 mx-auto mb-1">📷</div>
+              <div className="w-6 h-6 mx-auto mb-2 text-xl">📷</div>
             )}
-            <span className="text-xs font-medium block">AI Pushup Tracker</span>
+            <span className="text-sm font-medium block">AI Pushup Tracker</span>
           </button>
         </div>
         
@@ -145,53 +145,53 @@ export default function AchievementsTab({
           <button
             onClick={() => onQuickAction('quick-workout')}
             disabled={isLoading === 'quick-workout'}
-            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
+            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
           >
             {isLoading === 'quick-workout' ? (
-              <div className="w-5 h-5 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-6 h-6 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-5 h-5 mx-auto mb-1">⏱️</div>
+              <div className="w-7 h-7 mx-auto mb-2 text-2xl">⏱️</div>
             )}
-            <span className="text-xs font-medium block">5-Min Workout</span>
+            <span className="text-sm font-medium block">5-Min Workout</span>
           </button>
           
           <button
             onClick={() => onQuickAction('daily-challenge')}
             disabled={isLoading === 'daily-challenge'}
-            className="bg-gradient-to-r from-orange-500 to-red-600 text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
+            className="bg-gradient-to-r from-orange-500 to-red-600 text-white p-6 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
           >
             {isLoading === 'daily-challenge' ? (
-              <div className="w-5 h-5 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-6 h-6 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-5 h-5 mx-auto mb-1">🎯</div>
+              <div className="w-7 h-7 mx-auto mb-2 text-2xl">🎯</div>
             )}
-            <span className="text-xs font-medium block">Daily Challenge</span>
+            <span className="text-sm font-medium block">Daily Challenge</span>
           </button>
           
           <button
             onClick={() => onQuickAction('strength-training')}
             disabled={isLoading === 'strength-training'}
-            className="bg-gradient-to-r from-purple-500 to-pink-600 text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
+            className="bg-gradient-to-r from-purple-500 to-pink-600 text-white p-6 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
           >
             {isLoading === 'strength-training' ? (
-              <div className="w-5 h-5 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-6 h-6 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-5 h-5 mx-auto mb-1">⚡</div>
+              <div className="w-7 h-7 mx-auto mb-2 text-2xl">⚡</div>
             )}
-            <span className="text-xs font-medium block">Strength Training</span>
+            <span className="text-sm font-medium block">Strength Training</span>
           </button>
           
           <button
             onClick={() => onStartPushupTracking(20)}
             disabled={isLoading === 'camera-pushups'}
-            className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
+            className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-6 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100"
           >
             {isLoading === 'camera-pushups' ? (
-              <div className="w-5 h-5 mx-auto mb-1 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-6 h-6 mx-auto mb-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <div className="w-5 h-5 mx-auto mb-1">📷</div>
+              <div className="w-7 h-7 mx-auto mb-2 text-2xl">📷</div>
             )}
-            <span className="text-xs font-medium block">AI Pushup Tracker</span>
+            <span className="text-sm font-medium block">AI Pushup Tracker</span>
           </button>
           </div>
         </div>
