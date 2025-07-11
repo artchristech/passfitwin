@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Mic, Camera } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
@@ -20,20 +20,6 @@ export default function ChatInput({ onSendMessage, isTyping }: ChatInputProps) {
   return (
     <form onSubmit={handleSubmit} className="fixed bottom-16 left-0 right-0 p-4 bg-zinc-800 border-t border-zinc-700 sm:p-6 z-10">
       <div className="flex items-center space-x-2 sm:space-x-3">
-        <button
-          type="button"
-          className="p-2 text-zinc-400 hover:text-orange-400 transition-all duration-300 rounded-full hover:bg-zinc-700 active:scale-95 sm:p-3"
-        >
-          <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
-        </button>
-        
-        <button
-          type="button"
-          className="p-2 text-zinc-400 hover:text-orange-400 transition-all duration-300 rounded-full hover:bg-zinc-700 active:scale-95 sm:p-3"
-        >
-          <Mic className="w-4 h-4 sm:w-5 sm:h-5" />
-        </button>
-        
         <div className="flex-1 relative">
           <input
             type="text"
