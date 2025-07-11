@@ -31,7 +31,7 @@ function App() {
     gamification
   } = useFitnessChat();
   
-  const [activeTab, setActiveTab] = useState<'chat' | 'challenges' | 'achievements'>('chat');
+  const [activeTab, setActiveTab] = useState<'chat' | 'challenges' | 'achievements'>('achievements');
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | 'info' } | null>(null);
   const [isLoading, setIsLoading] = useState<string | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
