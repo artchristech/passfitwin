@@ -141,7 +141,6 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
                 {/* Overlay indicators */}
                 {isActive && (
                   <div className="absolute top-4 left-4 space-y-2">
-                    <div className={`px-3 py-1 rounded-full text-sm font-medium ${
                     <div className={`px-3 py-1 rounded-full text-xs font-medium sm:text-sm md:text-base ${
                       pushupMetrics.isInPosition 
                         ? 'bg-green-500 text-white' 
@@ -204,7 +203,6 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
             <div className="space-y-6">
               {/* Rep Counter */}
               <div className="bg-gradient-to-br from-orange-50 to-purple-50 rounded-2xl p-6 text-center">
-                <div className="text-6xl font-bold text-gray-800 mb-2">
                 <div className="text-4xl font-bold text-gray-800 mb-2 sm:text-5xl md:text-6xl lg:text-7xl">
                   {pushupMetrics.count}
                 </div>
@@ -230,21 +228,21 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600 md:text-base">Confidence</span>
-                    <span className={`text-sm font-semibold md:text-base ${getConfidenceColor()}`}>
+                    <span className={\`text-sm font-semibold md:text-base ${getConfidenceColor()}`}>
                       {pushupMetrics.confidence}%
                     </span>
                   </div>
 
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600 md:text-base">Current Phase</span>
-                    <span className={`text-sm font-semibold capitalize md:text-base ${getPhaseColor()}`}>
+                    <span className={\`text-sm font-semibold capitalize md:text-base ${getPhaseColor()}`}>
                       {pushupMetrics.phase}
                     </span>
                   </div>
 
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600 md:text-base">Position</span>
-                    <span className={`text-sm font-semibold md:text-base ${
+                    <span className={\`text-sm font-semibold md:text-base ${
                       pushupMetrics.isInPosition ? 'text-green-500' : 'text-red-500'
                     }`}>
                       {pushupMetrics.isInPosition ? 'Correct' : 'Adjust'}
