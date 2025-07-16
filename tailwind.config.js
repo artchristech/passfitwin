@@ -5,6 +5,9 @@ export default {
     extend: {
       screens: {
         'xs': '475px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
       },
       spacing: {
         'safe-top': 'env(safe-area-inset-top)',

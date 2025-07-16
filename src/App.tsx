@@ -106,6 +106,7 @@ function App() {
       />
       
       <div className="flex-1 flex flex-col w-full max-w-md mx-auto bg-zinc-800/30 rounded-3xl m-2 overflow-hidden sm:max-w-4xl sm:m-4 pb-32">
+      <div className="flex-1 flex flex-col w-full max-w-md mx-auto bg-zinc-800/30 rounded-3xl m-2 overflow-hidden sm:max-w-2xl md:max-w-4xl lg:max-w-6xl sm:m-4 pb-32">
         {activeTab === 'chat' && (
           <>
             <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 sm:p-6 sm:space-y-6 scroll-smooth pb-20">
@@ -161,7 +162,7 @@ function App() {
       {/* Tab Navigation - Now at Bottom */}
       {/* Bottom Navigation - Rebuilt for Stability */}
       <nav className="fixed bottom-0 left-0 right-0 z-20 bg-zinc-800 border-t border-zinc-700 pb-safe-bottom">
-        <div className="w-full max-w-md mx-auto sm:max-w-4xl">
+        <div className="w-full max-w-md mx-auto sm:max-w-2xl md:max-w-4xl lg:max-w-6xl">
           <div className="flex h-16">
             {/* Achievements Tab */}
             <button

@@ -93,8 +93,8 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
         <div className="bg-gradient-to-r from-orange-500 to-purple-600 text-white p-6 rounded-t-3xl">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-2xl font-bold">AI Pushup Tracker</h2>
-              <p className="opacity-90">Real-time form analysis & counting</p>
+              <h2 className="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">AI Pushup Tracker</h2>
+              <p className="opacity-90 text-sm sm:text-base md:text-lg">Real-time form analysis & counting</p>
             </div>
             <button
               onClick={onClose}
@@ -106,7 +106,7 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
 
           {/* Progress */}
           <div className="space-y-2">
-            <div className="flex justify-between text-sm">
+            <div className="flex justify-between text-sm md:text-base">
               <span>{pushupMetrics.count} / {targetReps} pushups</span>
               <span>{formatTime(duration)}</span>
             </div>
@@ -142,6 +142,7 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
                 {isActive && (
                   <div className="absolute top-4 left-4 space-y-2">
                     <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    <div className={`px-3 py-1 rounded-full text-xs font-medium sm:text-sm md:text-base ${
                       pushupMetrics.isInPosition 
                         ? 'bg-green-500 text-white' 
                         : 'bg-red-500 text-white'
@@ -149,7 +150,7 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
                       {pushupMetrics.isInPosition ? 'In Position' : 'Position Yourself'}
                     </div>
                     
-                    <div className={`px-3 py-1 rounded-full text-sm font-medium bg-black/70 text-white`}>
+                    <div className={`px-3 py-1 rounded-full text-xs font-medium sm:text-sm md:text-base bg-black/70 text-white`}>
                       Phase: <span className={getPhaseColor()}>{pushupMetrics.phase}</span>
                     </div>
                   </div>
@@ -160,8 +161,8 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
                   <div className="absolute inset-0 bg-green-500/90 flex items-center justify-center">
                     <div className="text-center text-white">
                       <CheckCircle className="w-16 h-16 mx-auto mb-4 animate-bounce" />
-                      <h3 className="text-2xl font-bold">Workout Complete!</h3>
-                      <p className="text-lg">{pushupMetrics.count} pushups in {formatTime(duration)}</p>
+                      <h3 className="text-xl font-bold sm:text-2xl md:text-3xl">Workout Complete!</h3>
+                      <p className="text-base sm:text-lg md:text-xl">{pushupMetrics.count} pushups in {formatTime(duration)}</p>
                     </div>
                   </div>
                 )}
@@ -204,11 +205,12 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
               {/* Rep Counter */}
               <div className="bg-gradient-to-br from-orange-50 to-purple-50 rounded-2xl p-6 text-center">
                 <div className="text-6xl font-bold text-gray-800 mb-2">
+                <div className="text-4xl font-bold text-gray-800 mb-2 sm:text-5xl md:text-6xl lg:text-7xl">
                   {pushupMetrics.count}
                 </div>
-                <p className="text-gray-600">Pushups Completed</p>
+                <p className="text-sm text-gray-600 sm:text-base md:text-lg">Pushups Completed</p>
                 <div className="mt-4">
-                  <div className="text-sm text-gray-600 mb-2">Target: {targetReps}</div>
+                  <div className="text-xs text-gray-600 mb-2 sm:text-sm md:text-base">Target: {targetReps}</div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div 
                       className="bg-gradient-to-r from-orange-500 to-purple-600 h-2 rounded-full transition-all duration-500"
@@ -222,27 +224,27 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
               <div className="bg-white border-2 border-gray-200 rounded-2xl p-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <Target className="w-5 h-5 text-orange-500" />
-                  <h3 className="font-semibold text-gray-800">Form Analysis</h3>
+                  <h3 className="text-sm font-semibold text-gray-800 sm:text-base md:text-lg">Form Analysis</h3>
                 </div>
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Confidence</span>
-                    <span className={`font-semibold ${getConfidenceColor()}`}>
+                    <span className="text-sm text-gray-600 md:text-base">Confidence</span>
+                    <span className={`text-sm font-semibold md:text-base ${getConfidenceColor()}`}>
                       {pushupMetrics.confidence}%
                     </span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Current Phase</span>
-                    <span className={`font-semibold capitalize ${getPhaseColor()}`}>
+                    <span className="text-sm text-gray-600 md:text-base">Current Phase</span>
+                    <span className={`text-sm font-semibold capitalize md:text-base ${getPhaseColor()}`}>
                       {pushupMetrics.phase}
                     </span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Position</span>
-                    <span className={`font-semibold ${
+                    <span className="text-sm text-gray-600 md:text-base">Position</span>
+                    <span className={`text-sm font-semibold md:text-base ${
                       pushupMetrics.isInPosition ? 'text-green-500' : 'text-red-500'
                     }`}>
                       {pushupMetrics.isInPosition ? 'Correct' : 'Adjust'}
@@ -256,11 +258,11 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
                 <div className="bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-6">
                   <div className="flex items-center space-x-2 mb-3">
                     <AlertTriangle className="w-5 h-5 text-yellow-600" />
-                    <h3 className="font-semibold text-yellow-800">Form Tips</h3>
+                    <h3 className="text-sm font-semibold text-yellow-800 sm:text-base md:text-lg">Form Tips</h3>
                   </div>
                   <ul className="space-y-2">
                     {pushupMetrics.formFeedback.map((tip, index) => (
-                      <li key={index} className="text-yellow-700 text-sm flex items-start space-x-2">
+                      <li key={index} className="text-yellow-700 text-xs flex items-start space-x-2 sm:text-sm md:text-base">
                         <span className="w-1.5 h-1.5 bg-yellow-600 rounded-full mt-2 flex-shrink-0"></span>
                         <span>{tip}</span>
                       </li>
@@ -271,8 +273,8 @@ export default function PushupTracker({ targetReps, onComplete, onClose }: Pushu
 
               {/* Instructions */}
               <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6">
-                <h3 className="font-semibold text-blue-800 mb-3">Instructions</h3>
-                <ul className="space-y-2 text-blue-700 text-sm">
+                <h3 className="text-sm font-semibold text-blue-800 mb-3 sm:text-base md:text-lg">Instructions</h3>
+                <ul className="space-y-2 text-blue-700 text-xs sm:text-sm md:text-base">
                   <li>• Position yourself in front of the camera</li>
                   <li>• Make sure your full body is visible</li>
                   <li>• Start in plank position with hands shoulder-width apart</li>

@@ -17,17 +17,17 @@ export default function ChallengesTab({ challenges, onAcceptChallenge, onClaimRe
     <div className="p-4 space-y-4 sm:space-y-6">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-xl font-bold text-zinc-100 mb-2 sm:text-2xl">Fitness Challenges</h2>
-        <p className="text-zinc-300 text-sm sm:text-base">Push your limits and earn rewards!</p>
+        <h2 className="text-xl font-bold text-zinc-100 mb-2 sm:text-2xl md:text-3xl lg:text-4xl">Fitness Challenges</h2>
+        <p className="text-zinc-300 text-sm sm:text-base md:text-lg">Push your limits and earn rewards!</p>
       </div>
 
       {/* Daily Challenges */}
       <div>
         <div className="flex items-center space-x-2 mb-4">
           <Target className="w-5 h-5 text-orange-500" />
-          <h3 className="text-lg font-semibold text-zinc-100">Daily Challenges</h3>
+          <h3 className="text-lg font-semibold text-zinc-100 md:text-xl lg:text-2xl">Daily Challenges</h3>
         </div>
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-3 sm:space-y-4 md:grid md:grid-cols-2 md:gap-4 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4">
           {dailyChallenges.map(challenge => (
             <ChallengeCard
               key={challenge.id}
@@ -43,9 +43,9 @@ export default function ChallengesTab({ challenges, onAcceptChallenge, onClaimRe
       <div>
         <div className="flex items-center space-x-2 mb-4">
           <Trophy className="w-5 h-5 text-purple-500" />
-          <h3 className="text-lg font-semibold text-zinc-100">Weekly Challenges</h3>
+          <h3 className="text-lg font-semibold text-zinc-100 md:text-xl lg:text-2xl">Weekly Challenges</h3>
         </div>
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-3 sm:space-y-4 md:grid md:grid-cols-2 md:gap-4 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4">
           {weeklyChallenges.map(challenge => (
             <ChallengeCard
               key={challenge.id}
@@ -61,9 +61,9 @@ export default function ChallengesTab({ challenges, onAcceptChallenge, onClaimRe
       <div>
         <div className="flex items-center space-x-2 mb-4">
           <Flame className="w-5 h-5 text-red-500" />
-          <h3 className="text-lg font-semibold text-zinc-100">Special Events</h3>
+          <h3 className="text-lg font-semibold text-zinc-100 md:text-xl lg:text-2xl">Special Events</h3>
         </div>
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-3 sm:space-y-4 md:grid md:grid-cols-2 md:gap-4 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4">
           {specialChallenges.map(challenge => (
             <ChallengeCard
               key={challenge.id}
