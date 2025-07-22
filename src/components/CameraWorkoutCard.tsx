@@ -21,8 +21,8 @@ export default function CameraWorkoutCard({ onStartPushupTracking, isLoading }: 
           <Camera className="w-5 h-5 sm:w-6 sm:h-6" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-zinc-100 sm:text-xl md:text-2xl lg:text-3xl">AI Camera Tracking</h3>
-          <p className="text-sm text-zinc-300 sm:text-base md:text-lg">Real-time pushup counting & form analysis</p>
+          <h3 className="text-lg font-bold text-zinc-100 sm:text-xl">AI Camera Tracking</h3>
+          <p className="text-sm text-zinc-300 sm:text-base">Real-time pushup counting & form analysis</p>
         </div>
       </div>
 
@@ -30,9 +30,9 @@ export default function CameraWorkoutCard({ onStartPushupTracking, isLoading }: 
         <div className="bg-zinc-700/30 rounded-2xl p-3 border border-zinc-600/20 sm:p-4">
           <div className="flex items-center space-x-2 mb-3">
             <Zap className="w-5 h-5 text-orange-400" />
-            <span className="text-sm font-semibold text-zinc-100 sm:text-base md:text-lg">Features</span>
+            <span className="font-semibold text-zinc-100">Features</span>
           </div>
-          <ul className="space-y-2 text-xs text-zinc-300 sm:text-sm md:text-base">
+          <ul className="space-y-2 text-sm text-zinc-300">
             <li className="flex items-center space-x-2">
               <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
               <span>Automatic rep counting</span>
@@ -55,11 +55,11 @@ export default function CameraWorkoutCard({ onStartPushupTracking, isLoading }: 
         <div>
           <div className="flex items-center space-x-2 mb-3">
             <Target className="w-5 h-5 text-purple-400" />
-            <span className="text-sm font-semibold text-zinc-100 sm:text-base md:text-lg">Choose Your Challenge</span>
+            <span className="font-semibold text-zinc-100">Choose Your Challenge</span>
           </div>
           
           {/* Mobile: Horizontal scroll */}
-          <div className="flex space-x-3 overflow-x-auto scrollbar-hide pb-2 md:hidden">
+          <div className="flex space-x-3 overflow-x-auto scrollbar-hide pb-2 sm:hidden">
             {pushupChallenges.map((challenge) => (
               <button
                 key={challenge.reps}
@@ -72,7 +72,7 @@ export default function CameraWorkoutCard({ onStartPushupTracking, isLoading }: 
                 ) : (
                   <>
                     <div className="text-xl font-bold mb-1">{challenge.reps}</div>
-                    <div className="text-xs opacity-90 sm:text-sm">{challenge.difficulty}</div>
+                    <div className="text-xs opacity-90">{challenge.difficulty}</div>
                   </>
                 )}
               </button>
@@ -80,20 +80,20 @@ export default function CameraWorkoutCard({ onStartPushupTracking, isLoading }: 
           </div>
           
           {/* Desktop: Grid */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          <div className="hidden sm:grid sm:grid-cols-2 sm:gap-3">
             {pushupChallenges.map((challenge) => (
               <button
                 key={challenge.reps}
                 onClick={() => onStartPushupTracking(challenge.reps)}
                 disabled={isLoading}
-                className={`bg-gradient-to-r ${challenge.color} text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100 md:p-6`}
+                className={`bg-gradient-to-r ${challenge.color} text-white p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:scale-100`}
               >
                 {isLoading ? (
-                  <Loader2 className="w-6 h-6 mx-auto animate-spin md:w-8 md:h-8" />
+                  <Loader2 className="w-6 h-6 mx-auto animate-spin" />
                 ) : (
                   <>
-                    <div className="text-2xl font-bold mb-1 md:text-3xl lg:text-4xl">{challenge.reps}</div>
-                    <div className="text-xs opacity-90 md:text-sm lg:text-base">{challenge.difficulty}</div>
+                    <div className="text-2xl font-bold mb-1">{challenge.reps}</div>
+                    <div className="text-xs opacity-90">{challenge.difficulty}</div>
                   </>
                 )}
               </button>
@@ -104,9 +104,9 @@ export default function CameraWorkoutCard({ onStartPushupTracking, isLoading }: 
         <div className="bg-yellow-500/10 border border-yellow-400/20 rounded-2xl p-3 sm:p-4">
           <div className="flex items-center space-x-2 mb-2">
             <Timer className="w-4 h-4 text-yellow-400" />
-            <span className="text-xs font-semibold text-yellow-300 sm:text-sm md:text-base">Setup Tips</span>
+            <span className="text-sm font-semibold text-yellow-300">Setup Tips</span>
           </div>
-          <ul className="space-y-1 text-xs text-yellow-200 md:text-sm">
+          <ul className="space-y-1 text-xs text-yellow-200">
             <li>• Ensure good lighting and clear camera view</li>
             <li>• Position camera to see your full body</li>
             <li>• Allow camera permissions when prompted</li>
